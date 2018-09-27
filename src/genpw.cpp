@@ -52,9 +52,9 @@ double genPassword_getBitStrength(uint32_t baseLength)
  * Returns the base password length given a desired bit strength of at most 128 bits.
  *
  * There are 8 targets: 48, 56, 64, 72, 80, 96, 100, and 128. Actual strengths are slightly higher: 48.7441, 58.1764, 67.2404,
- * 76.1313, 80.4366, 96.9324, 100.8567, and 128.0527. `bits` can be set to any value 128 or less and it will select the correct
- * target. It is suggested you stick with the original 8 target bit strengths and display them as such (ie 56 or 56+ vs 58 or
- * 58.1764).
+ * 76.1313, 80.4366, 96.9324, 100.8567, and 128.0527. `bitStrength` can be set to any value 128 or less and it will select the
+ * correct target. It is suggested you stick with the original 8 target bit strengths and display them as such (ie 56 or 56+ vs
+ * 58 or 58.1764).
  *
  * @param bitStrength - Bit strength of the password.
  * @return Base password length on success, otherwise zero.
@@ -98,8 +98,8 @@ uint32_t genPassword_getBaseLength(uint32_t bitStrength)
  * The passwords that are generated are lowercase numeric with floor(length*10.125/36) digits, (length-digits-1) letters, and
  * one more letter or digit. Digits are noncontiguous and no repeated characters. There are 8 targets: 48, 56, 64, 72, 80, 96,
  * 100, and 128. Actual strengths are slightly higher: 48.7441, 58.1764, 67.2404, 76.1313, 80.4366, 96.9324, 100.8567, and
- * 128.0527. `bits` can be set to any value 128 or less and it will select the correct target. It is suggested you stick with
- * the original 8 target bit strengths and display them as such (ie 56 or 56+ vs 58 or 58.1764).
+ * 128.0527. `bitStrength` can be set to any value 128 or less and it will select the correct target. It is suggested you stick
+ * with the original 8 target bit strengths and display them as such (ie 56 or 56+ vs 58 or 58.1764).
  *
  * @param password    - Password buffer of at least 38 characters.
  * @param bitStrength - Bit strength of the password.
