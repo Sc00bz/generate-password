@@ -294,11 +294,13 @@ int genPasswordLength(char password[38], uint32_t baseLength, int flags)
 	// You don't need these unless required by password policy
 	if ((flags & GEN_PASSWORD_FLAG_NEED_UPPERCASE) != 0)
 	{
+		// Uppercase the first letter that is not i or o
 		for (uint32_t i = 0; i < baseLength; i++)
 		{
-			if (password[i] >= 'a')
+			char ch = password[i];
+			if (ch >= 'a' && ch != 'i' && ch != 'o')
 			{
-				password[i] -= 32;
+				password[i] = ch - 32;
 				break;
 			}
 		}
